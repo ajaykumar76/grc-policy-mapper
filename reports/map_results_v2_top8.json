@@ -1,0 +1,3445 @@
+{
+  "summary": {
+    "config": {
+      "prompt": "v2",
+      "top_k": 8,
+      "tag": "v2_top8",
+      "index": {}
+    },
+    "retrieval": {
+      "hit@1": 16,
+      "hit@3": 25,
+      "hit@5": 25,
+      "hit@10": 26
+    },
+    "n_positive": 28,
+    "n_negative": 3,
+    "baseline_top1_correct": 16,
+    "baseline_negatives_mapped": 1,
+    "llm_accept_yes_or_partial": {
+      "gold_control_recall": "26/37 (70%)",
+      "statements_with_a_gold_control": "23/28 (82%)",
+      "precision_vs_gold (understated)": "26/91 (29%)",
+      "off_topic_statements_mapped": "3/3"
+    },
+    "llm_accept_yes_only": {
+      "gold_control_recall": "15/37 (41%)",
+      "statements_with_a_gold_control": "14/28 (50%)",
+      "precision_vs_gold (understated)": "15/55 (27%)",
+      "off_topic_statements_mapped": "1/3"
+    },
+    "guardrail_flags": 33
+  },
+  "results": {
+    "P01": {
+      "cands": [
+        [
+          "IA-11",
+          0.4656749963760376
+        ],
+        [
+          "IA-1",
+          0.4392129182815552
+        ],
+        [
+          "IA-2",
+          0.4309001863002777
+        ],
+        [
+          "IA-6",
+          0.40511012077331543
+        ],
+        [
+          "IA-8",
+          0.40226373076438904
+        ],
+        [
+          "IA-10",
+          0.39821216464042664
+        ],
+        [
+          "AC-14",
+          0.38430163264274597
+        ],
+        [
+          "AC-2",
+          0.3809593915939331
+        ],
+        [
+          "AC-7",
+          0.3659120202064514
+        ],
+        [
+          "IA-12",
+          0.3644443154335022
+        ]
+      ],
+      "judged": [
+        {
+          "control": "IA-11",
+          "sim": 0.466,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on authentication requirements, while the control IA-11 Re-authentication focuses on re-authentication after certain circumstances or situations, which is a different security requirement.",
+          "flag": ""
+        },
+        {
+          "control": "IA-1",
+          "sim": 0.439,
+          "verdict": "partial",
+          "evidence": "Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance;",
+          "reason": "The policy statement covers part of the control's main purpose by mentioning authentication, but it is not a comprehensive policy statement.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "IA-2",
+          "sim": 0.431,
+          "verdict": "yes",
+          "evidence": "All users must authenticate with a unique user ID and a password of at least 14 characters.",
+          "reason": "The policy statement requires authentication with a unique user ID and a password, which is the main purpose of the control IA-2.",
+          "flag": ""
+        },
+        {
+          "control": "IA-6",
+          "sim": 0.405,
+          "verdict": "no",
+          "evidence": "All users must authenticate with a unique user ID and a password of at least 14 characters.",
+          "reason": "The policy statement focuses on authentication requirements for user IDs and passwords, but does not mention protecting authentication information from exploitation.",
+          "flag": ""
+        },
+        {
+          "control": "IA-8",
+          "sim": 0.402,
+          "verdict": "yes",
+          "evidence": "All users must authenticate with a unique user ID and a password of at least 14 characters.",
+          "reason": "The policy statement requires unique user ID and strong password, which are the main purposes of the control IA-8.",
+          "flag": ""
+        },
+        {
+          "control": "IA-10",
+          "sim": 0.398,
+          "verdict": "partial",
+          "evidence": "All users must authenticate with a unique user ID and a password of at least 14 characters.",
+          "reason": "The policy statement requires unique authentication with a password, but does not explicitly mention adaptive authentication mechanisms or circumstances.",
+          "flag": ""
+        },
+        {
+          "control": "AC-14",
+          "sim": 0.384,
+          "verdict": "no",
+          "evidence": "All users must authenticate with a unique user ID and a password of at least 14 characters.",
+          "reason": "The policy statement does not address the control's main purpose of identifying user actions that can be performed on the system without identification or authentication.",
+          "flag": ""
+        },
+        {
+          "control": "AC-2",
+          "sim": 0.381,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about password requirements, while the control AC-2 is about account management, including user authentication, account creation, and access authorizations.",
+          "flag": ""
+        }
+      ]
+    },
+    "P02": {
+      "cands": [
+        [
+          "AC-17",
+          0.48491328954696655
+        ],
+        [
+          "IA-10",
+          0.4379204213619232
+        ],
+        [
+          "IA-11",
+          0.42923933267593384
+        ],
+        [
+          "IA-1",
+          0.4252243936061859
+        ],
+        [
+          "CA-6",
+          0.39562779664993286
+        ],
+        [
+          "PS-7",
+          0.38985973596572876
+        ],
+        [
+          "IA-6",
+          0.3896428346633911
+        ],
+        [
+          "IA-5",
+          0.38798147439956665
+        ],
+        [
+          "SC-15",
+          0.387398362159729
+        ],
+        [
+          "AC-2",
+          0.3861137926578522
+        ]
+      ],
+      "judged": [
+        {
+          "control": "AC-17",
+          "sim": 0.485,
+          "verdict": "yes",
+          "evidence": "Multi-factor authentication is required for all remote access...",
+          "reason": "The policy statement requires multi-factor authentication for all remote access, which aligns with the main purpose of AC-17, which is to establish and document usage restrictions for remote access.",
+          "flag": ""
+        },
+        {
+          "control": "IA-10",
+          "sim": 0.438,
+          "verdict": "partial",
+          "evidence": "Multi-factor authentication is required for all remote access and for all administrator accounts.",
+          "reason": "The policy statement requires multi-factor authentication, which is related to the control's requirement for supplemental authentication techniques, but it does not specify the circumstances or situations under which this requirement applies.",
+          "flag": ""
+        },
+        {
+          "control": "IA-11",
+          "sim": 0.429,
+          "verdict": "yes",
+          "evidence": "Multi-factor authentication is required for all remote access and for all administrator accounts.",
+          "reason": "The policy statement requires multi-factor authentication, which is closely related to re-authentication, as re-authentication implies a second authentication attempt after an initial login, which is part of the multi-factor authentication requirement.",
+          "flag": ""
+        },
+        {
+          "control": "IA-1",
+          "sim": 0.425,
+          "verdict": "yes",
+          "evidence": "Multi-factor authentication is required for all remote access and for all administrator accounts.",
+          "reason": "The policy statement covers the main purpose of the control, which is to establish a consistent identification and authentication policy across the organization, including specific requirements for remote access and administrator accounts.",
+          "flag": ""
+        },
+        {
+          "control": "CA-6",
+          "sim": 0.396,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "CA-6 is about assigning authorizing officials and authorizing system and common control operations, whereas the policy statement is about multi-factor authentication for remote access and administrator accounts.",
+          "flag": ""
+        },
+        {
+          "control": "PS-7",
+          "sim": 0.39,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on remote access and administrator accounts, whereas the control PS-7 focuses on external personnel security.",
+          "flag": ""
+        },
+        {
+          "control": "IA-6",
+          "sim": 0.39,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the control's main purpose of obscuring authentication feedback, but rather requires multi-factor authentication for all remote access and administrator accounts.",
+          "flag": ""
+        },
+        {
+          "control": "IA-5",
+          "sim": 0.388,
+          "verdict": "yes",
+          "evidence": "Multi-factor authentication is required for all remote access and for all administrator accounts.",
+          "reason": "The policy requires multi-factor authentication for all remote access and administrator accounts, which aligns with the control's requirement for establishing sufficient strength of mechanism for authenticators.",
+          "flag": ""
+        }
+      ]
+    },
+    "P03": {
+      "cands": [
+        [
+          "AC-7",
+          0.5630510449409485
+        ],
+        [
+          "IA-11",
+          0.3891499638557434
+        ],
+        [
+          "AC-2",
+          0.36569491028785706
+        ],
+        [
+          "IA-6",
+          0.3622894883155823
+        ],
+        [
+          "AC-10",
+          0.32235050201416016
+        ],
+        [
+          "AC-9",
+          0.2921540141105652
+        ],
+        [
+          "AC-11",
+          0.27736955881118774
+        ],
+        [
+          "IA-1",
+          0.23969455063343048
+        ],
+        [
+          "AC-12",
+          0.2351083606481552
+        ],
+        [
+          "IA-5",
+          0.22842369973659515
+        ]
+      ],
+      "judged": [
+        {
+          "control": "AC-7",
+          "sim": 0.563,
+          "verdict": "yes",
+          "evidence": "Accounts are locked for 30 minutes after five consecutive failed login attempts.",
+          "reason": "The policy statement explicitly states the condition for account locking, which aligns with the main purpose of control AC-7, enforcing a limit of consecutive invalid logon attempts and locking the account.",
+          "flag": ""
+        },
+        {
+          "control": "IA-11",
+          "sim": 0.389,
+          "verdict": "yes",
+          "evidence": "accounts are locked",
+          "reason": "The policy statement requires re-authentication after a specific circumstance (5 consecutive failed login attempts) similar to the control's requirement for re-authentication under certain circumstances.",
+          "flag": ""
+        },
+        {
+          "control": "AC-2",
+          "sim": 0.366,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement addresses a specific action (locking accounts) but the control AC-2 focuses on account management requirements and processes, not specific actions like account locking.",
+          "flag": ""
+        },
+        {
+          "control": "IA-6",
+          "sim": 0.362,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "",
+          "flag": ""
+        },
+        {
+          "control": "AC-10",
+          "sim": 0.322,
+          "verdict": "no",
+          "evidence": "accounts",
+          "reason": "The control is about controlling the number of concurrent sessions, while the policy is about handling failed login attempts.",
+          "flag": ""
+        },
+        {
+          "control": "AC-9",
+          "sim": 0.292,
+          "verdict": "no",
+          "evidence": "Accounts are locked for 30 minutes after five consecutive failed login attempts.",
+          "reason": "The policy statement addresses a different security requirement (preventing unauthorized access due to failed login attempts) than the control (informing users of their previous logon date and time).",
+          "flag": ""
+        },
+        {
+          "control": "AC-11",
+          "sim": 0.277,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not explicitly mention device lockout after a specified period of inactivity or require users to initiate a device lock before leaving the system.",
+          "flag": ""
+        },
+        {
+          "control": "IA-1",
+          "sim": 0.24,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on account locking due to login attempts, whereas the control IA-1 addresses the development of identification and authentication policies in general.",
+          "flag": ""
+        }
+      ]
+    },
+    "P04": {
+      "cands": [
+        [
+          "AC-2",
+          0.5154280662536621
+        ],
+        [
+          "AC-3",
+          0.4069533348083496
+        ],
+        [
+          "CM-5",
+          0.3757808804512024
+        ],
+        [
+          "PE-2",
+          0.3746136426925659
+        ],
+        [
+          "AC-1",
+          0.3604508340358734
+        ],
+        [
+          "SC-43",
+          0.35635867714881897
+        ],
+        [
+          "AC-14",
+          0.35609596967697144
+        ],
+        [
+          "IA-6",
+          0.3505946397781372
+        ],
+        [
+          "SI-16",
+          0.3401336669921875
+        ],
+        [
+          "AC-8",
+          0.3363964259624481
+        ]
+      ],
+      "judged": [
+        {
+          "control": "AC-2",
+          "sim": 0.515,
+          "verdict": "no",
+          "evidence": "Create, enable, modify, disable, and remove accounts in accordance with [policy, procedures, prerequisites, and criteria];",
+          "reason": "The policy statement does not address the specific requirement of specifying access authorizations and attributes for each account as stated in control AC-2.",
+          "flag": ""
+        },
+        {
+          "control": "AC-3",
+          "sim": 0.407,
+          "verdict": "yes",
+          "evidence": "accounts unused for 60 days are disabled",
+          "reason": "The policy statement addresses the control's main purpose of enforcing approved authorizations for logical access to information and system resources by implementing account disabling for unused accounts.",
+          "flag": ""
+        },
+        {
+          "control": "CM-5",
+          "sim": 0.376,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about user access rights and account management, but it does not address the definition or documentation of physical and logical access restrictions.",
+          "flag": ""
+        },
+        {
+          "control": "PE-2",
+          "sim": 0.375,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "This policy statement is about user access rights, but the control PE-2 is about physical access authorizations, which is a different topic.",
+          "flag": ""
+        },
+        {
+          "control": "AC-1",
+          "sim": 0.36,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on user access rights and account maintenance, but the control AC-1 addresses the development and dissemination of organizational-level access control policy, which is a broader scope.",
+          "flag": ""
+        },
+        {
+          "control": "SC-43",
+          "sim": 0.356,
+          "verdict": "yes",
+          "evidence": "accounts unused for 60 days are disabled",
+          "reason": "The policy statement explicitly mentions the review of user access rights and disabling of unused accounts, which aligns with the main purpose of establishing usage restrictions and controlling their use.",
+          "flag": ""
+        },
+        {
+          "control": "AC-14",
+          "sim": 0.356,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the main purpose of control AC-14, which is to identify and document actions that do not require identification or authentication, but rather focuses on user access rights and account disabling.",
+          "flag": ""
+        },
+        {
+          "control": "IA-6",
+          "sim": 0.351,
+          "verdict": "no",
+          "evidence": "accounts unused for 60 days are disabled.",
+          "reason": "The control is about obscuring authentication information during authentication, whereas the policy statement is about account management and access rights.",
+          "flag": ""
+        }
+      ]
+    },
+    "P05": {
+      "cands": [
+        [
+          "AC-1",
+          0.4946376085281372
+        ],
+        [
+          "AC-6",
+          0.4860854744911194
+        ],
+        [
+          "MP-2",
+          0.4781583547592163
+        ],
+        [
+          "AC-3",
+          0.47769805788993835
+        ],
+        [
+          "CM-5",
+          0.45705193281173706
+        ],
+        [
+          "PE-2",
+          0.45350953936576843
+        ],
+        [
+          "PS-6",
+          0.4383336305618286
+        ],
+        [
+          "AC-5",
+          0.4239655137062073
+        ],
+        [
+          "PE-4",
+          0.4168214201927185
+        ],
+        [
+          "AC-14",
+          0.4081098437309265
+        ]
+      ],
+      "judged": [
+        {
+          "control": "AC-1",
+          "sim": 0.495,
+          "verdict": "partial",
+          "evidence": "Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance;",
+          "reason": "The policy statement ensures employees receive only necessary access for their job duties, aligning with the purpose of control AC-1, which is to establish and manage access control policy and procedures.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "AC-6",
+          "sim": 0.486,
+          "verdict": "yes",
+          "evidence": "Employees receive only the access they need to perform their job duties.",
+          "reason": "Both policy and control address the principle of limiting user access to what is necessary for job duties.",
+          "flag": ""
+        },
+        {
+          "control": "MP-2",
+          "sim": 0.478,
+          "verdict": "yes",
+          "evidence": "Employees receive only the access they need to perform their job duties.",
+          "reason": "The policy statement restricts access to employees based on job duties, aligning with the main purpose of controlling media access to personnel or roles.",
+          "flag": ""
+        },
+        {
+          "control": "AC-3",
+          "sim": 0.478,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about employee access needs, while the control AC-3 is about enforcing approved authorizations for access to information and system resources.",
+          "flag": ""
+        },
+        {
+          "control": "CM-5",
+          "sim": 0.457,
+          "verdict": "no",
+          "evidence": "Employees receive only the access they need to perform their job duties.",
+          "reason": "This policy statement does not address the main purpose of controlling access restrictions for changes to the system, which is to ensure the security of the system by enforcing changes.",
+          "flag": ""
+        },
+        {
+          "control": "PE-2",
+          "sim": 0.454,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the specific requirement of maintaining a list of individuals with authorized access to the facility where the system resides.",
+          "flag": ""
+        },
+        {
+          "control": "PS-6",
+          "sim": 0.438,
+          "verdict": "partial",
+          "evidence": "Sign appropriate access agreements prior to being granted access;",
+          "reason": "the policy statement addresses the main purpose of the control, which is to verify that individuals requiring access to organizational information and systems sign access agreements prior to being granted access.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "AC-5",
+          "sim": 0.424,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not specifically mention separation of duties or system access authorizations, which are the main purpose of control AC-5.",
+          "flag": ""
+        }
+      ]
+    },
+    "P06": {
+      "cands": [
+        [
+          "AC-11",
+          0.4656885266304016
+        ],
+        [
+          "AC-12",
+          0.45888644456863403
+        ],
+        [
+          "AC-10",
+          0.3997765779495239
+        ],
+        [
+          "IA-11",
+          0.38360273838043213
+        ],
+        [
+          "AC-7",
+          0.3834984004497528
+        ],
+        [
+          "IA-6",
+          0.35599812865257263
+        ],
+        [
+          "SC-10",
+          0.34038636088371277
+        ],
+        [
+          "AC-9",
+          0.3091963529586792
+        ],
+        [
+          "SC-23",
+          0.2838512063026428
+        ],
+        [
+          "SI-16",
+          0.2682182788848877
+        ]
+      ],
+      "judged": [
+        {
+          "control": "AC-11",
+          "sim": 0.466,
+          "verdict": "yes",
+          "evidence": "User sessions are automatically locked after 10 minutes of inactivity.",
+          "reason": "The policy statement directly states the automatic locking of user sessions after a specified period of inactivity, aligning with the main purpose of AC-11 Device Lock.",
+          "flag": ""
+        },
+        {
+          "control": "AC-12",
+          "sim": 0.459,
+          "verdict": "yes",
+          "evidence": "User sessions are automatically locked after 10 minutes of inactivity.",
+          "reason": "The policy statement specifies a specific condition (inactivity for 10 minutes) that matches the main purpose of the control (automatically terminate a user session after a condition or trigger event).",
+          "flag": ""
+        },
+        {
+          "control": "AC-10",
+          "sim": 0.4,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement addresses user session locking due to inactivity, but the control AC-10 is about limiting concurrent sessions, which is a different security requirement.",
+          "flag": ""
+        },
+        {
+          "control": "IA-11",
+          "sim": 0.384,
+          "verdict": "yes",
+          "evidence": "after 10 minutes of inactivity",
+          "reason": "the policy statement addresses the main purpose of the control, requiring re-authentication after a period of inactivity.",
+          "flag": ""
+        },
+        {
+          "control": "AC-7",
+          "sim": 0.383,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not mention anything related to enforcing a limit of consecutive invalid logon attempts or locking the account/node upon exceeding the maximum attempts.",
+          "flag": ""
+        },
+        {
+          "control": "IA-6",
+          "sim": 0.356,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about session locking, while the control is about obscuring authentication feedback.",
+          "flag": ""
+        },
+        {
+          "control": "SC-10",
+          "sim": 0.34,
+          "verdict": "partial",
+          "evidence": "",
+          "reason": "The policy statement \"User sessions are automatically locked after 10 minutes of inactivity.\" directly addresses the main purpose of SC-10 Network Disconnect, which is to terminate the network connection after a specified time period of inactivity.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "AC-9",
+          "sim": 0.309,
+          "verdict": "no",
+          "evidence": "User sessions are automatically locked after 10 minutes of inactivity.",
+          "reason": "The policy statement addresses a different security requirement than the control AC-9, which focuses on notifying users of their last logon time, not session locking due to inactivity.",
+          "flag": ""
+        }
+      ]
+    },
+    "P07": {
+      "cands": [
+        [
+          "AU-2",
+          0.4917399287223816
+        ],
+        [
+          "AC-8",
+          0.45757240056991577
+        ],
+        [
+          "IA-6",
+          0.42252030968666077
+        ],
+        [
+          "AU-5",
+          0.4173542857170105
+        ],
+        [
+          "PE-6",
+          0.41484251618385315
+        ],
+        [
+          "IA-13",
+          0.4132534861564636
+        ],
+        [
+          "CM-4",
+          0.4054134488105774
+        ],
+        [
+          "SC-4",
+          0.4011929929256439
+        ],
+        [
+          "AC-17",
+          0.3953816890716553
+        ],
+        [
+          "AC-9",
+          0.3855215311050415
+        ]
+      ],
+      "judged": [
+        {
+          "control": "AU-2",
+          "sim": 0.492,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on logging specific types of security-relevant events, whereas the control AU-2 focuses on identifying and coordinating event logging to support the audit function, including selecting event types and providing a rationale for their selection.",
+          "flag": ""
+        },
+        {
+          "control": "AC-8",
+          "sim": 0.458,
+          "verdict": "partial",
+          "evidence": "Users are accessing a U.S. Government system; System usage may be monitored, recorded, and subject to audit;",
+          "reason": "The policy statement addresses the main purpose of the control, which is to notify users of system use and its implications, including monitoring and recording of system usage.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "IA-6",
+          "sim": 0.423,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on logging security-relevant events, while the control IA-6 deals with obscuring authentication feedback during the authentication process.",
+          "flag": ""
+        },
+        {
+          "control": "AU-5",
+          "sim": 0.417,
+          "verdict": "partial",
+          "evidence": "Alert personnel or roles within a time period in the event of an audit logging process failure",
+          "reason": "The policy statement explicitly requires logging of security-relevant events, which includes alerting personnel or roles in case of logging failures, aligning with the main purpose of control AU-5.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "PE-6",
+          "sim": 0.415,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement only addresses logging security-relevant events, whereas the control PE-6 focuses on monitoring physical access to detect and respond to physical security incidents.",
+          "flag": ""
+        },
+        {
+          "control": "IA-13",
+          "sim": 0.413,
+          "verdict": "partial",
+          "evidence": "using [policy]",
+          "reason": "The policy statement mentions logging of security-relevant events, which is a minor part of the control's main purpose of managing user, device, and non-person entity identities and access rights.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "CM-4",
+          "sim": 0.405,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on logging security-relevant events, whereas the control CM-4 focuses on analyzing changes to the system for potential security and privacy impacts.",
+          "flag": ""
+        },
+        {
+          "control": "SC-4",
+          "sim": 0.401,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is focused on logging security-relevant events, whereas the control SC-4 is about preventing unauthorized information transfer via shared system resources.",
+          "flag": ""
+        }
+      ]
+    },
+    "P08": {
+      "cands": [
+        [
+          "AU-4",
+          0.4403453469276428
+        ],
+        [
+          "AU-11",
+          0.4375416338443756
+        ],
+        [
+          "AU-6",
+          0.42684635519981384
+        ],
+        [
+          "AU-13",
+          0.4099372625350952
+        ],
+        [
+          "AU-5",
+          0.4057847559452057
+        ],
+        [
+          "AU-2",
+          0.38999778032302856
+        ],
+        [
+          "AU-16",
+          0.3761889934539795
+        ],
+        [
+          "PE-6",
+          0.33906617760658264
+        ],
+        [
+          "AU-9",
+          0.31495827436447144
+        ],
+        [
+          "IR-5",
+          0.3091551661491394
+        ]
+      ],
+      "judged": [
+        {
+          "control": "AU-4",
+          "sim": 0.44,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on log review frequency and retention duration, while the control is focused on allocating storage capacity to meet retention requirements.",
+          "flag": ""
+        },
+        {
+          "control": "AU-11",
+          "sim": 0.438,
+          "verdict": "partial",
+          "evidence": "Retain audit records for [time period]",
+          "reason": "The policy statement retains logs for at least 12 months, which aligns with the main purpose of retaining audit records for a specified time period.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "AU-6",
+          "sim": 0.427,
+          "verdict": "partial",
+          "evidence": "Logs are reviewed weekly for suspicious activity",
+          "reason": "The policy statement addresses the frequency of log review, but not the analysis, reporting, or risk adjustment aspects of the control.",
+          "flag": ""
+        },
+        {
+          "control": "AU-13",
+          "sim": 0.41,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the monitoring of information disclosure from open-source information or information sites, nor does it mention notification of personnel or roles, which are key components of the AU-13 control.",
+          "flag": ""
+        },
+        {
+          "control": "AU-5",
+          "sim": 0.406,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on log review frequency and retention, while the control AU-5 is concerned with responding to audit logging process failures and taking additional actions.",
+          "flag": ""
+        },
+        {
+          "control": "AU-2",
+          "sim": 0.39,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on log retention, not the types of events to be logged or the coordination with other organizational entities.",
+          "flag": ""
+        },
+        {
+          "control": "AU-16",
+          "sim": 0.376,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about log review and retention, not coordinating audit information across organizational boundaries.",
+          "flag": ""
+        },
+        {
+          "control": "PE-6",
+          "sim": 0.339,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "PE-6 focuses on physical access monitoring, while the policy statement addresses log retention for suspicious activity, which is a different security requirement.",
+          "flag": ""
+        }
+      ]
+    },
+    "P09": {
+      "cands": [
+        [
+          "IR-6",
+          0.5146386623382568
+        ],
+        [
+          "RA-10",
+          0.42483267188072205
+        ],
+        [
+          "AU-13",
+          0.41062942147254944
+        ],
+        [
+          "PE-6",
+          0.40159398317337036
+        ],
+        [
+          "PS-1",
+          0.3870861232280731
+        ],
+        [
+          "PM-1",
+          0.3863685429096222
+        ],
+        [
+          "SI-4",
+          0.3823326826095581
+        ],
+        [
+          "RA-5",
+          0.3756231665611267
+        ],
+        [
+          "SI-5",
+          0.37345653772354126
+        ],
+        [
+          "RA-3",
+          0.3701263666152954
+        ]
+      ],
+      "judged": [
+        {
+          "control": "IR-6",
+          "sim": 0.515,
+          "verdict": "partial",
+          "evidence": "",
+          "reason": "The policy statement \"Security incidents must be reported to the security team within 24 hours of discovery.\" directly addresses the main purpose of the control IR-6, which is to require personnel to report suspected incidents to the organizational incident response capability within a specified time period. ",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "RA-10",
+          "sim": 0.425,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the detection, tracking, or disruption of threats, which are the main purposes of the RA-10 control.",
+          "flag": ""
+        },
+        {
+          "control": "AU-13",
+          "sim": 0.411,
+          "verdict": "yes",
+          "evidence": "within 24 hours of discovery",
+          "reason": "The policy statement requires reporting of security incidents to the security team within 24 hours, which is the same purpose as the control's monitoring for information disclosure and notifying personnel upon discovery.",
+          "flag": ""
+        },
+        {
+          "control": "PE-6",
+          "sim": 0.402,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "PE-6 focuses on monitoring physical access, while the policy statement only covers reporting security incidents, not the specific monitoring process.",
+          "flag": ""
+        },
+        {
+          "control": "PS-1",
+          "sim": 0.387,
+          "verdict": "yes",
+          "evidence": "within 24 hours of discovery",
+          "reason": "The policy statement about reporting security incidents within 24 hours is directly related to the main purpose of the control PS-1, which is to facilitate the implementation of personnel security controls.",
+          "flag": ""
+        },
+        {
+          "control": "PM-1",
+          "sim": 0.386,
+          "verdict": "no",
+          "evidence": "Provides an overview of the requirements for the security program and a description of the security program management controls and common controls in place or planned for meeting those requirements;",
+          "reason": "The policy statement does not cover the main purpose of the control, which is reporting security incidents. ",
+          "flag": ""
+        },
+        {
+          "control": "SI-4",
+          "sim": 0.382,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not mention system monitoring, detection of attacks, unauthorized connections, or internal monitoring capabilities.",
+          "flag": ""
+        },
+        {
+          "control": "RA-5",
+          "sim": 0.376,
+          "verdict": "partial",
+          "evidence": "when new vulnerabilities potentially affecting the system are identified and reported;",
+          "reason": "The policy statement requires reporting of security incidents, but does not mention the frequency or specifics of vulnerability scanning, which is part of control RA-5's requirements.",
+          "flag": "evidence_not_in_statement"
+        }
+      ]
+    },
+    "P10": {
+      "cands": [
+        [
+          "IR-8",
+          0.606569766998291
+        ],
+        [
+          "IR-3",
+          0.5965316891670227
+        ],
+        [
+          "IR-1",
+          0.571098804473877
+        ],
+        [
+          "IR-6",
+          0.5369769334793091
+        ],
+        [
+          "IR-2",
+          0.5011366605758667
+        ],
+        [
+          "PM-14",
+          0.4776911735534668
+        ],
+        [
+          "PM-4",
+          0.460685670375824
+        ],
+        [
+          "RA-7",
+          0.46036049723625183
+        ],
+        [
+          "CA-5",
+          0.4486037492752075
+        ],
+        [
+          "RA-1",
+          0.4474160373210907
+        ]
+      ],
+      "judged": [
+        {
+          "control": "IR-8",
+          "sim": 0.607,
+          "verdict": "yes",
+          "evidence": "The company maintains an incident response plan that is tested every year.",
+          "reason": "The policy statement directly mentions testing of the incident response plan, which aligns with the main purpose of control IR-8, which is to test the incident response plan.",
+          "flag": ""
+        },
+        {
+          "control": "IR-3",
+          "sim": 0.597,
+          "verdict": "yes",
+          "evidence": "The company maintains an incident response plan that is tested every year.",
+          "reason": "The policy statement mentions a yearly test of the incident response plan, which aligns with the frequency specified in the control IR-3.",
+          "flag": ""
+        },
+        {
+          "control": "IR-1",
+          "sim": 0.571,
+          "verdict": "partial",
+          "evidence": "Is consistent with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines;",
+          "reason": "the policy statement mentions testing, which is a part of the control's main purpose of developing and disseminating incident response policy.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "IR-6",
+          "sim": 0.537,
+          "verdict": "yes",
+          "evidence": "The company maintains an incident response plan that is tested every year.",
+          "reason": "The policy statement requires testing of the incident response plan, which aligns with the main purpose of control IR-6, which is to ensure timely reporting of incidents to the organizational incident response capability.",
+          "flag": ""
+        },
+        {
+          "control": "IR-2",
+          "sim": 0.501,
+          "verdict": "yes",
+          "evidence": "The company maintains an incident response plan that is tested every year.",
+          "reason": "The policy statement mentions testing of the incident response plan, which aligns with the control's requirement to provide incident response training within a certain time period.",
+          "flag": ""
+        },
+        {
+          "control": "PM-14",
+          "sim": 0.478,
+          "verdict": "yes",
+          "evidence": "The company maintains an incident response plan that is tested every year.",
+          "reason": "The policy statement directly states that the incident response plan is tested annually, which aligns with the main purpose of the PM-14 control, which is to ensure regular testing, training, and monitoring of security and privacy testing activities.",
+          "flag": ""
+        },
+        {
+          "control": "PM-4",
+          "sim": 0.461,
+          "verdict": "partial",
+          "evidence": "are developed and maintained;",
+          "reason": "The policy statement explicitly mentions that the incident response plan is tested every year, which aligns with the control's requirement to maintain plans of action and milestones, albeit for a specific program (information security)",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "RA-7",
+          "sim": 0.46,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The control focuses on responding to findings from security and privacy assessments, monitoring, and audits, whereas the policy statement only mentions testing of the incident response plan.",
+          "flag": ""
+        }
+      ]
+    },
+    "P11": {
+      "cands": [
+        [
+          "CP-9",
+          0.5178378820419312
+        ],
+        [
+          "RA-9",
+          0.4522269070148468
+        ],
+        [
+          "CP-10",
+          0.43688756227493286
+        ],
+        [
+          "MA-6",
+          0.39309555292129517
+        ],
+        [
+          "MA-3",
+          0.38596057891845703
+        ],
+        [
+          "SA-20",
+          0.3747214376926422
+        ],
+        [
+          "MA-2",
+          0.3431360423564911
+        ],
+        [
+          "SA-11",
+          0.32342812418937683
+        ],
+        [
+          "SI-2",
+          0.3215893507003784
+        ],
+        [
+          "SC-45",
+          0.32126131653785706
+        ]
+      ],
+      "judged": [
+        {
+          "control": "CP-9",
+          "sim": 0.518,
+          "verdict": "partial",
+          "evidence": "Conduct backups of user-level information contained in [system components] [frequency];",
+          "reason": "The policy statement mentions daily backups, but only covers user-level information, whereas the control CP-9 requires backups of both user-level and system-level information.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "RA-9",
+          "sim": 0.452,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on backup and restore procedures, whereas the control RA-9 focuses on identifying critical system components and functions.",
+          "flag": ""
+        },
+        {
+          "control": "CP-10",
+          "sim": 0.437,
+          "verdict": "partial",
+          "evidence": "backups are backed up daily",
+          "reason": "the policy statement only mentions backup restores being tested, not the recovery and reconstitution process itself",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "MA-6",
+          "sim": 0.393,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about backup and restore, while the control MA-6 is about maintenance, a different topic.",
+          "flag": ""
+        },
+        {
+          "control": "MA-3",
+          "sim": 0.386,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about backup and restore procedures, while the control MA-3 is about system maintenance tools and their review frequency.",
+          "flag": ""
+        },
+        {
+          "control": "SA-20",
+          "sim": 0.375,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on backup and restore procedures for critical systems, while the control SA-20 focuses on the custom development of critical system components, which is a separate security requirement.",
+          "flag": ""
+        },
+        {
+          "control": "MA-2",
+          "sim": 0.343,
+          "verdict": "no",
+          "evidence": "Critical systems are backed up daily and backup restores are tested every quarter.",
+          "reason": "This policy statement is about data backup and restore procedures, which is a different topic from controlled maintenance and system component replacement.",
+          "flag": ""
+        },
+        {
+          "control": "SA-11",
+          "sim": 0.323,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the testing and evaluation of security and privacy controls, but rather focuses on backup and restore processes.",
+          "flag": ""
+        }
+      ]
+    },
+    "P12": {
+      "cands": [
+        [
+          "SI-2",
+          0.4052940309047699
+        ],
+        [
+          "PM-8",
+          0.40111666917800903
+        ],
+        [
+          "RA-5",
+          0.3636874556541443
+        ],
+        [
+          "RA-9",
+          0.35776329040527344
+        ],
+        [
+          "MA-7",
+          0.33366891741752625
+        ],
+        [
+          "SA-20",
+          0.32348862290382385
+        ],
+        [
+          "SI-3",
+          0.31474316120147705
+        ],
+        [
+          "SA-11",
+          0.30230042338371277
+        ],
+        [
+          "SC-50",
+          0.2811048626899719
+        ],
+        [
+          "SA-3",
+          0.28067779541015625
+        ]
+      ],
+      "judged": [
+        {
+          "control": "SI-2",
+          "sim": 0.405,
+          "verdict": "partial",
+          "evidence": "install security-relevant software and firmware updates",
+          "reason": "The policy statement requires installation of security-relevant patches within 14 days, which aligns with the control's main purpose of installing security-relevant updates within a time period of release.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "PM-8",
+          "sim": 0.401,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement addresses the installation of security patches, while the control PM-8 focuses on the development and documentation of a critical infrastructure plan.",
+          "flag": ""
+        },
+        {
+          "control": "RA-5",
+          "sim": 0.364,
+          "verdict": "partial",
+          "evidence": "and when new vulnerabilities potentially affecting the system are identified and reported;",
+          "reason": "the policy statement addresses the scenario where new vulnerabilities are identified and reported, aligning with the main purpose of the control RA-5 to respond to identified vulnerabilities.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "RA-9",
+          "sim": 0.358,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is focused on installing security patches, whereas the control RA-9 is about identifying critical system components, which are a different aspect of overall system security.",
+          "flag": ""
+        },
+        {
+          "control": "MA-7",
+          "sim": 0.334,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement addresses the timeframe for installing security patches, whereas the control MA-7 focuses on restricting field maintenance to trusted facilities, which is a separate security requirement.",
+          "flag": ""
+        },
+        {
+          "control": "SA-20",
+          "sim": 0.323,
+          "verdict": "partial",
+          "evidence": "",
+          "reason": "The policy statement addresses the main purpose of the control, which is to ensure critical system components are reimplemented or custom developed, implying timely installation of security patches rated critical.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "SI-3",
+          "sim": 0.315,
+          "verdict": "partial",
+          "evidence": "Automatically update malicious code protection mechanisms as new releases are available",
+          "reason": "The policy statement requires the update of malicious code protection mechanisms within a certain timeframe, which aligns with the control's requirement to automatically update malicious code protection mechanisms as new releases are available.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "SA-11",
+          "sim": 0.302,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about installing security patches, while the control SA-11 focuses on developer testing and evaluation, which is a different security requirement.",
+          "flag": ""
+        }
+      ]
+    },
+    "P13": {
+      "cands": [
+        [
+          "RA-5",
+          0.6096150875091553
+        ],
+        [
+          "SI-2",
+          0.3811244070529938
+        ],
+        [
+          "RA-3",
+          0.3729003667831421
+        ],
+        [
+          "CM-4",
+          0.366005539894104
+        ],
+        [
+          "SI-4",
+          0.36288926005363464
+        ],
+        [
+          "SA-11",
+          0.352115273475647
+        ],
+        [
+          "MA-3",
+          0.3434530198574066
+        ],
+        [
+          "CA-8",
+          0.3391762673854828
+        ],
+        [
+          "PM-14",
+          0.3380381464958191
+        ],
+        [
+          "AU-6",
+          0.328360915184021
+        ]
+      ],
+      "judged": [
+        {
+          "control": "RA-5",
+          "sim": 0.61,
+          "verdict": "yes",
+          "evidence": "run monthly",
+          "reason": "The policy statement requires vulnerability scans to be run monthly, which aligns with the control's requirement to scan for vulnerabilities in the system and hosted applications at a defined frequency.",
+          "flag": ""
+        },
+        {
+          "control": "SI-2",
+          "sim": 0.381,
+          "verdict": "yes",
+          "evidence": "Vulnerability scans of all internet-facing systems run monthly",
+          "reason": "The policy statement addresses the main purpose of identifying and remediating flaws in system vulnerabilities, which is the core requirement of the SI-2 control.",
+          "flag": ""
+        },
+        {
+          "control": "RA-3",
+          "sim": 0.373,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on vulnerability scans, while the control RA-3 covers a broader range of risk assessment activities, including threat identification, likelihood and magnitude of harm assessment, and impact on individuals.",
+          "flag": ""
+        },
+        {
+          "control": "CM-4",
+          "sim": 0.366,
+          "verdict": "no",
+          "evidence": "\"Vulnerability scans of all internet-facing systems run monthly and findings are tracked until they are fixed.\"",
+          "reason": "The policy statement focuses on regular vulnerability scans, while the control CM-4 focuses on impact analyses prior to change implementation.",
+          "flag": ""
+        },
+        {
+          "control": "SI-4",
+          "sim": 0.363,
+          "verdict": "no",
+          "evidence": "Vulnerability scans",
+          "reason": "The policy statement only mentions scans for internet-facing systems, while the control SI-4 includes monitoring for unauthorized connections and other broader system monitoring activities.",
+          "flag": ""
+        },
+        {
+          "control": "SA-11",
+          "sim": 0.352,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not require any testing or evaluation of the system's security and privacy controls, only vulnerability scans of internet-facing systems.",
+          "flag": ""
+        },
+        {
+          "control": "MA-3",
+          "sim": 0.343,
+          "verdict": "yes",
+          "evidence": "run monthly",
+          "reason": "The policy statement requires monthly vulnerability scans of internet-facing systems, which aligns with the control's requirement to review previously approved system maintenance tools at a specified frequency.",
+          "flag": ""
+        },
+        {
+          "control": "CA-8",
+          "sim": 0.339,
+          "verdict": "no",
+          "evidence": "Conduct penetration testing",
+          "reason": "The policy statement focuses on vulnerability scans, whereas the control CA-8 is about penetration testing, which is a different security activity.",
+          "flag": ""
+        }
+      ]
+    },
+    "P14": {
+      "cands": [
+        [
+          "SC-8",
+          0.4132126271724701
+        ],
+        [
+          "SC-28",
+          0.3966303765773773
+        ],
+        [
+          "AC-16",
+          0.3848487436771393
+        ],
+        [
+          "PL-2",
+          0.3846448063850403
+        ],
+        [
+          "PE-19",
+          0.37806105613708496
+        ],
+        [
+          "SA-8",
+          0.3776734471321106
+        ],
+        [
+          "SR-9",
+          0.3760969638824463
+        ],
+        [
+          "SC-12",
+          0.3712857961654663
+        ],
+        [
+          "PM-3",
+          0.37005335092544556
+        ],
+        [
+          "SC-15",
+          0.36752232909202576
+        ]
+      ],
+      "judged": [
+        {
+          "control": "SC-8",
+          "sim": 0.413,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on encryption of stored data, not transmission confidentiality and integrity.",
+          "flag": ""
+        },
+        {
+          "control": "SC-28",
+          "sim": 0.397,
+          "verdict": "partial",
+          "evidence": "Protect the [confidentiality | integrity] of the following information at rest:",
+          "reason": "The policy statement addresses the main purpose of SC-28, which is to protect information at rest, specifically its confidentiality and integrity.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "AC-16",
+          "sim": 0.385,
+          "verdict": "yes",
+          "evidence": "Sensitive data stored on laptops and servers must be encrypted.",
+          "reason": "the policy statement addresses the control's main purpose of encrypting sensitive data in storage",
+          "flag": ""
+        },
+        {
+          "control": "PL-2",
+          "sim": 0.385,
+          "verdict": "yes",
+          "evidence": "Sensitive data stored on laptops and servers must be encrypted.",
+          "reason": "This policy statement explicitly mentions encryption of sensitive data, which aligns with the main purpose of control PL-2, which is to provide a security and privacy plan that includes the categorization and protection of sensitive information.",
+          "flag": ""
+        },
+        {
+          "control": "PE-19",
+          "sim": 0.378,
+          "verdict": "no",
+          "evidence": "\"Sensitive data stored on laptops and servers must be encrypted.\"",
+          "reason": "The control focuses on electromagnetic signals emanations, whereas the policy statement specifically addresses encryption of data on laptops and servers.",
+          "flag": ""
+        },
+        {
+          "control": "SA-8",
+          "sim": 0.378,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement only covers encryption of sensitive data, whereas the control SA-8 focuses on systems security and privacy engineering principles in general.",
+          "flag": ""
+        },
+        {
+          "control": "SR-9",
+          "sim": 0.376,
+          "verdict": "no",
+          "evidence": "Sensitive data stored on laptops and servers must be encrypted.",
+          "reason": "The policy statement focuses on data encryption, whereas the control SR-9 addresses tamper resistance and detection, which is a different security requirement.",
+          "flag": ""
+        },
+        {
+          "control": "SC-12",
+          "sim": 0.371,
+          "verdict": "no",
+          "evidence": "Establish and manage cryptographic keys",
+          "reason": "The policy statement only addresses the storage of sensitive data, not the key establishment and management process.",
+          "flag": ""
+        }
+      ]
+    },
+    "P15": {
+      "cands": [
+        [
+          "SC-8",
+          0.4386398196220398
+        ],
+        [
+          "SC-17",
+          0.41872352361679077
+        ],
+        [
+          "SC-28",
+          0.3884214162826538
+        ],
+        [
+          "AC-16",
+          0.37146297097206116
+        ],
+        [
+          "AT-4",
+          0.3545263707637787
+        ],
+        [
+          "PM-17",
+          0.3374336361885071
+        ],
+        [
+          "AC-22",
+          0.3371559977531433
+        ],
+        [
+          "SC-13",
+          0.33389994502067566
+        ],
+        [
+          "SA-8",
+          0.3322370648384094
+        ],
+        [
+          "SC-7",
+          0.32735592126846313
+        ]
+      ],
+      "judged": [
+        {
+          "control": "SC-8",
+          "sim": 0.439,
+          "verdict": "partial",
+          "evidence": "All data sent over public networks must be protected",
+          "reason": "the policy statement partially addresses the main purpose of control SC-8, which is to protect the integrity of transmitted information, specifically when transmitted over public networks.",
+          "flag": ""
+        },
+        {
+          "control": "SC-17",
+          "sim": 0.419,
+          "verdict": "no",
+          "evidence": "all data sent over public networks must be protected with TLS 1.2 or higher.",
+          "reason": "The policy statement is focused on network encryption, while the control SC-17 is about public key infrastructure certificates, which is a related but distinct topic.",
+          "flag": ""
+        },
+        {
+          "control": "SC-28",
+          "sim": 0.388,
+          "verdict": "no",
+          "evidence": "All data sent over public networks must be protected with TLS 1.2 or higher.",
+          "reason": "The control SC-28 focuses on the protection of information at rest, which is not explicitly mentioned in the policy statement.",
+          "flag": ""
+        },
+        {
+          "control": "AC-16",
+          "sim": 0.371,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about protecting data sent over public networks with TLS 1.2 or higher, while the control AC-16 is about associating security and privacy attributes with information in storage, process, and transmission.",
+          "flag": ""
+        },
+        {
+          "control": "AT-4",
+          "sim": 0.355,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The control is about training records and awareness training, while the policy statement is about network security and data protection.",
+          "flag": ""
+        },
+        {
+          "control": "PM-17",
+          "sim": 0.337,
+          "verdict": "yes",
+          "evidence": "All data sent over public networks must be protected with TLS 1.2 or higher.",
+          "reason": "This policy statement addresses the main purpose of protecting controlled unclassified information on external systems, specifically focusing on data transmission over public networks with TLS 1.2 or higher.",
+          "flag": ""
+        },
+        {
+          "control": "AC-22",
+          "sim": 0.337,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about protecting data sent over public networks with TLS 1.2 or higher, which is a different topic from making information publicly accessible.",
+          "flag": ""
+        },
+        {
+          "control": "SC-13",
+          "sim": 0.334,
+          "verdict": "no",
+          "evidence": "All data sent over public networks must be protected with TLS 1.2 or higher.",
+          "reason": "The policy statement addresses a specific implementation detail (TLS 1.2 or higher), whereas the control SC-13 is more general, focusing on determining and implementing cryptographic protection for various uses.",
+          "flag": ""
+        }
+      ]
+    },
+    "P16": {
+      "cands": [
+        [
+          "AT-4",
+          0.5603013038635254
+        ],
+        [
+          "AT-2",
+          0.5435221195220947
+        ],
+        [
+          "AT-1",
+          0.5071593523025513
+        ],
+        [
+          "PS-1",
+          0.5029546022415161
+        ],
+        [
+          "AT-3",
+          0.4773366451263428
+        ],
+        [
+          "PM-13",
+          0.4705454111099243
+        ],
+        [
+          "PM-14",
+          0.4601994752883911
+        ],
+        [
+          "SA-16",
+          0.42678388953208923
+        ],
+        [
+          "IA-1",
+          0.4067974090576172
+        ],
+        [
+          "PM-1",
+          0.4037224054336548
+        ]
+      ],
+      "judged": [
+        {
+          "control": "AT-4",
+          "sim": 0.56,
+          "verdict": "yes",
+          "evidence": "All employees complete security awareness training when hired and every year after that.",
+          "reason": "The policy statement covers the requirement of documenting and monitoring security awareness training activities, similar to the main purpose of NIST SP 800-53 control AT-4.",
+          "flag": ""
+        },
+        {
+          "control": "AT-2",
+          "sim": 0.544,
+          "verdict": "yes",
+          "evidence": "All employees complete security awareness training when hired and every year after that.",
+          "reason": "The policy statement requires security awareness training for all employees on an annual basis, aligning with the main purpose of control AT-2 to provide security and privacy literacy training to system users.",
+          "flag": ""
+        },
+        {
+          "control": "AT-1",
+          "sim": 0.507,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The control focuses on policy and procedures for awareness and training, while the policy statement focuses on security awareness training for employees specifically.",
+          "flag": ""
+        },
+        {
+          "control": "PS-1",
+          "sim": 0.503,
+          "verdict": "no",
+          "evidence": "Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance;",
+          "reason": "The policy statement is about training, not about developing and disseminating personnel security policy as required by the control.",
+          "flag": ""
+        },
+        {
+          "control": "AT-3",
+          "sim": 0.477,
+          "verdict": "no",
+          "evidence": "\"When hired and every year after that.\"",
+          "reason": "The policy statement only addresses training when hired and annually, whereas the control requires training before access and upon system changes, among other triggers.",
+          "flag": ""
+        },
+        {
+          "control": "PM-13",
+          "sim": 0.471,
+          "verdict": "partial",
+          "evidence": "All employees complete security awareness training when hired and every year after that.",
+          "reason": "The policy statement addresses the annual training aspect of the control PM-13, but not the overall workforce development and improvement program.",
+          "flag": ""
+        },
+        {
+          "control": "PM-14",
+          "sim": 0.46,
+          "verdict": "yes",
+          "evidence": "All employees complete security awareness training when hired and every year after that.",
+          "reason": "The policy statement covers the testing, training, and monitoring activities associated with organizational systems, specifically security awareness training.",
+          "flag": ""
+        },
+        {
+          "control": "SA-16",
+          "sim": 0.427,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on employee security awareness training, whereas the control SA-16 focuses on developer-provided training for security and privacy functions.",
+          "flag": ""
+        }
+      ]
+    },
+    "P17": {
+      "cands": [
+        [
+          "MA-2",
+          0.538593053817749
+        ],
+        [
+          "CM-5",
+          0.4931508004665375
+        ],
+        [
+          "SA-15",
+          0.479191392660141
+        ],
+        [
+          "SA-1",
+          0.4774511456489563
+        ],
+        [
+          "MA-3",
+          0.46863576769828796
+        ],
+        [
+          "CA-1",
+          0.4530424177646637
+        ],
+        [
+          "SI-1",
+          0.4348236918449402
+        ],
+        [
+          "CM-3",
+          0.43330568075180054
+        ],
+        [
+          "SR-8",
+          0.43325191736221313
+        ],
+        [
+          "PS-6",
+          0.4226182699203491
+        ]
+      ],
+      "judged": [
+        {
+          "control": "MA-2",
+          "sim": 0.539,
+          "verdict": "yes",
+          "evidence": "Changes to production systems need documented approval before they are made.",
+          "reason": "This policy statement addresses the main purpose of the Control MA-2, which is to ensure approval and documentation for maintenance and changes to production systems.",
+          "flag": ""
+        },
+        {
+          "control": "CM-5",
+          "sim": 0.493,
+          "verdict": "yes",
+          "evidence": "Changes to production systems need documented approval before they are made.",
+          "reason": "The policy statement explicitly mentions approval for changes to production systems, which is the main purpose of control CM-5.",
+          "flag": ""
+        },
+        {
+          "control": "SA-15",
+          "sim": 0.479,
+          "verdict": "yes",
+          "evidence": "Changes to production systems need documented approval before they are made.",
+          "reason": "The policy statement requires documented approval for changes to production systems, which aligns with the control's requirement to document changes to the development process and tools.",
+          "flag": ""
+        },
+        {
+          "control": "SA-1",
+          "sim": 0.477,
+          "verdict": "yes",
+          "evidence": "Changes to production systems need documented approval before they are made.",
+          "reason": "The policy statement explicitly requires documented approval before changes to production systems are made, which aligns with the main purpose of control SA-1.",
+          "flag": ""
+        },
+        {
+          "control": "MA-3",
+          "sim": 0.469,
+          "verdict": "partial",
+          "evidence": "_changes to production systems need documented approval before they are made",
+          "reason": "the policy statement requires approval before making changes to production systems, which aligns with the main purpose of the control MA-3.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "CA-1",
+          "sim": 0.453,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about documenting approval for changes to production systems, while the control CA-1 focuses on developing and disseminating assessment, authorization, and monitoring policy at an organizational level.",
+          "flag": ""
+        },
+        {
+          "control": "SI-1",
+          "sim": 0.435,
+          "verdict": "yes",
+          "evidence": "Changes to production systems need documented approval before they are made.",
+          "reason": "The policy statement directly addresses the need for approval before making changes to production systems, which aligns with the main purpose of SI-1.",
+          "flag": ""
+        },
+        {
+          "control": "CM-3",
+          "sim": 0.433,
+          "verdict": "yes",
+          "evidence": "Changes to production systems need documented approval before they are made.",
+          "reason": "The policy statement requires documented approval for changes to production systems, which aligns with the main purpose of Control CM-3, which is to determine and document configuration-controlled changes to the system.",
+          "flag": ""
+        }
+      ]
+    },
+    "P18": {
+      "cands": [
+        [
+          "CM-2",
+          0.6051504015922546
+        ],
+        [
+          "CM-6",
+          0.5318424105644226
+        ],
+        [
+          "SA-15",
+          0.49292775988578796
+        ],
+        [
+          "SC-51",
+          0.48662975430488586
+        ],
+        [
+          "SC-49",
+          0.47248464822769165
+        ],
+        [
+          "SA-23",
+          0.45275071263313293
+        ],
+        [
+          "SC-43",
+          0.43988463282585144
+        ],
+        [
+          "SA-10",
+          0.43360841274261475
+        ],
+        [
+          "SC-34",
+          0.4232221841812134
+        ],
+        [
+          "CM-1",
+          0.4202911853790283
+        ]
+      ],
+      "judged": [
+        {
+          "control": "CM-2",
+          "sim": 0.605,
+          "verdict": "partial",
+          "evidence": "When required due to [circumstances] ;",
+          "reason": "The policy statement addresses the control's requirement to update the baseline configuration when 'When required due to [circumstances] ;' is mentioned in the control CM-2",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "CM-6",
+          "sim": 0.532,
+          "verdict": "yes",
+          "evidence": "Servers and workstations are built from approved hardened configuration baselines.",
+          "reason": "The policy statement addresses the main purpose of establishing and documenting configuration settings for components, reflecting the most restrictive mode consistent with operational requirements.",
+          "flag": ""
+        },
+        {
+          "control": "SA-15",
+          "sim": 0.493,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about server and workstation configuration, not about the development process, standards, and tools used in system development.",
+          "flag": ""
+        },
+        {
+          "control": "SC-51",
+          "sim": 0.487,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the manual disabling and re enabling of hardware write-protect for firmware modifications by authorized individuals.",
+          "flag": ""
+        },
+        {
+          "control": "SC-49",
+          "sim": 0.472,
+          "verdict": "yes",
+          "evidence": "Servers and workstations are built from approved hardened configuration baselines.",
+          "reason": "The policy statement mentions 'hardened configuration baselines' which is closely related to the main purpose of SC-49, which is 'hardware-enforced separation and policy enforcement'.",
+          "flag": ""
+        },
+        {
+          "control": "SA-23",
+          "sim": 0.453,
+          "verdict": "no",
+          "evidence": "''Servers and workstations are built from approved hardened configuration baselines.''",
+          "reason": "The policy statement focuses on the initial build process, whereas the control SA-23- Specialization deals with modifying or reconfiguring systems to increase trustworthiness.",
+          "flag": ""
+        },
+        {
+          "control": "SC-43",
+          "sim": 0.44,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on hardware configuration, while the control SC-43 is related to software components and their usage restrictions.",
+          "flag": ""
+        },
+        {
+          "control": "SA-10",
+          "sim": 0.434,
+          "verdict": "yes",
+          "evidence": "Servers and workstations are built from approved hardened configuration baselines.",
+          "reason": "The policy statement addresses the implementation and configuration management of systems, aligning with the control's main purpose of ensuring organization-approved changes are implemented and tracked.",
+          "flag": ""
+        }
+      ]
+    },
+    "P19": {
+      "cands": [
+        [
+          "SR-12",
+          0.5027456283569336
+        ],
+        [
+          "MP-6",
+          0.49891600012779236
+        ],
+        [
+          "MP-4",
+          0.48356902599334717
+        ],
+        [
+          "MP-7",
+          0.43919289112091064
+        ],
+        [
+          "MP-8",
+          0.43714821338653564
+        ],
+        [
+          "SC-28",
+          0.4053972065448761
+        ],
+        [
+          "SC-8",
+          0.4002525508403778
+        ],
+        [
+          "SI-12",
+          0.3684706687927246
+        ],
+        [
+          "SI-7",
+          0.3602951765060425
+        ],
+        [
+          "SI-1",
+          0.3469374179840088
+        ]
+      ],
+      "judged": [
+        {
+          "control": "SR-12",
+          "sim": 0.503,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement addresses a specific aspect of component disposal (secure wiping or destruction), but the control SR-12 focuses on a broader range of disposal methods and techniques, not just secure wiping or destruction.",
+          "flag": ""
+        },
+        {
+          "control": "MP-6",
+          "sim": 0.499,
+          "verdict": "yes",
+          "evidence": "Storage media containing company data is securely wiped or destroyed before disposal.",
+          "reason": "The policy statement addresses the main purpose of sanitizing media prior to disposal, which is the control's main requirement.",
+          "flag": ""
+        },
+        {
+          "control": "MP-4",
+          "sim": 0.484,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about securely wiping or destroying storage media, while the control MP-4 focuses on physically controlling and securely storing media types in general, not specifically on wiping or destroying media.",
+          "flag": ""
+        },
+        {
+          "control": "MP-7",
+          "sim": 0.439,
+          "verdict": "yes",
+          "evidence": "Storage media containing company data is securely wiped or destroyed before disposal.",
+          "reason": "The policy statement addresses the control's main purpose of prohibiting the use of certain types of storage media on systems, which is related to securely wiping or destroying storage media before disposal.",
+          "flag": ""
+        },
+        {
+          "control": "MP-8",
+          "sim": 0.437,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the creation, employment, or verification of downgrading mechanisms, which are key aspects of control MP-8 - Media Downgrading.",
+          "flag": ""
+        },
+        {
+          "control": "SC-28",
+          "sim": 0.405,
+          "verdict": "no",
+          "evidence": "Protect the [confidentiality | integrity] of the following information at rest:",
+          "reason": "The policy statement focuses on secure disposal of storage media, while the control SC-28 focuses on protecting information at rest, which is a broader concept that includes not just disposal, but also other aspects of information security.",
+          "flag": ""
+        },
+        {
+          "control": "SC-8",
+          "sim": 0.4,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement addresses the disposal of storage media, while SC-8 is about protecting the confidentiality and integrity of transmitted information.",
+          "flag": ""
+        },
+        {
+          "control": "SI-12",
+          "sim": 0.368,
+          "verdict": "yes",
+          "evidence": "before disposal",
+          "reason": "The policy statement addresses the main purpose of controlling the secure disposal of storage media containing company data, which is also the focus of SI-12.",
+          "flag": ""
+        }
+      ]
+    },
+    "P20": {
+      "cands": [
+        [
+          "AC-17",
+          0.4431329369544983
+        ],
+        [
+          "PE-2",
+          0.41917163133621216
+        ],
+        [
+          "PE-8",
+          0.4178158640861511
+        ],
+        [
+          "PE-3",
+          0.4023781418800354
+        ],
+        [
+          "IA-13",
+          0.374589741230011
+        ],
+        [
+          "IA-1",
+          0.34731218218803406
+        ],
+        [
+          "IA-11",
+          0.3463961184024811
+        ],
+        [
+          "PS-7",
+          0.3398643732070923
+        ],
+        [
+          "SC-15",
+          0.3384733200073242
+        ],
+        [
+          "MA-5",
+          0.33332762122154236
+        ]
+      ],
+      "judged": [
+        {
+          "control": "AC-17",
+          "sim": 0.443,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement addresses physical access controls, while the control AC-17 is related to remote access to systems, which is a different topic.",
+          "flag": ""
+        },
+        {
+          "control": "PE-2",
+          "sim": 0.419,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not mention anything about authorization for access to systems or servers, which is the main purpose of the PE-2 control.}",
+          "flag": ""
+        },
+        {
+          "control": "PE-8",
+          "sim": 0.418,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on visitor management and server protection, while the control PE-8 focuses on record-keeping and reporting specific details about visitor access.",
+          "flag": ""
+        },
+        {
+          "control": "PE-3",
+          "sim": 0.402,
+          "verdict": "partial",
+          "evidence": "Escort visitors and control visitor activity [circumstances];",
+          "reason": "The policy statement requires escorting visitors in areas where servers are located, which aligns with the main purpose of Control PE-3 to control access to areas within the facility, including areas where servers are located.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "IA-13",
+          "sim": 0.375,
+          "verdict": "partial",
+          "evidence": "using [mechanisms]",
+          "reason": "the policy statement mentions the use of [mechanisms] in relation to servers, but the control's main purpose is to manage user, device and NPE identities and access rights, which is not directly addressed by the policy statement.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "IA-1",
+          "sim": 0.347,
+          "verdict": "partial",
+          "evidence": "Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance;",
+          "reason": "the policy statement covers the roles and responsibilities aspect of the control IA-1, specifically mentioning 'roles' and 'responsibilities' as part of the identification and authentication policy.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "IA-11",
+          "sim": 0.346,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on visitor access control, whereas the control IA-11 is about user re-authentication.",
+          "flag": ""
+        },
+        {
+          "control": "PS-7",
+          "sim": 0.34,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the security roles and responsibilities for external providers, system privileges, or monitoring provider compliance, which are key aspects of PS-7.",
+          "flag": ""
+        }
+      ]
+    },
+    "P21": {
+      "cands": [
+        [
+          "PS-7",
+          0.4796115458011627
+        ],
+        [
+          "SR-6",
+          0.4774447977542877
+        ],
+        [
+          "SI-1",
+          0.45450568199157715
+        ],
+        [
+          "SA-15",
+          0.4365561008453369
+        ],
+        [
+          "AU-13",
+          0.43526512384414673
+        ],
+        [
+          "PM-6",
+          0.4320756793022156
+        ],
+        [
+          "SA-9",
+          0.43093517422676086
+        ],
+        [
+          "SA-4",
+          0.4254695177078247
+        ],
+        [
+          "PL-2",
+          0.42521148920059204
+        ],
+        [
+          "PS-6",
+          0.42259466648101807
+        ]
+      ],
+      "judged": [
+        {
+          "control": "PS-7",
+          "sim": 0.48,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement only mentions reviewing third-party vendors annually, whereas the control PS-7-1 requires documenting personnel security requirements, which is not explicitly stated in the policy.",
+          "flag": ""
+        },
+        {
+          "control": "SR-6",
+          "sim": 0.477,
+          "verdict": "partial",
+          "evidence": "Third-party vendors that handle company data must meet our security requirements",
+          "reason": "The policy statement addresses the general requirement of third-party vendor security, but not the specific frequency of supplier assessments and reviews mentioned in the control.",
+          "flag": ""
+        },
+        {
+          "control": "SI-1",
+          "sim": 0.455,
+          "verdict": "yes",
+          "evidence": "Third-party vendors that handle company data must meet our security requirements and are reviewed every year.",
+          "reason": "The policy statement addresses the main purpose of control SI-1, which is to ensure that security policies and procedures are developed and disseminated to relevant personnel.",
+          "flag": ""
+        },
+        {
+          "control": "SA-15",
+          "sim": 0.437,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not explicitly address the documentation, management, and review of development process, standards, tools, and tool configurations, which is the main purpose of control SA-15.",
+          "flag": ""
+        },
+        {
+          "control": "AU-13",
+          "sim": 0.435,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about vetting third-party vendors for security requirements, whereas the control AU-13 is about monitoring for information disclosure, specifically open-source information.",
+          "flag": ""
+        },
+        {
+          "control": "PM-6",
+          "sim": 0.432,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the development, monitoring, and reporting of information security measures, but rather the review of third-party vendors handling company data.",
+          "flag": ""
+        },
+        {
+          "control": "SA-9",
+          "sim": 0.431,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on reviewing third-party vendors handling company data annually, whereas Control SA-9 emphasizes ongoing monitoring of compliance by external service providers and defining organizational oversight roles.",
+          "flag": ""
+        },
+        {
+          "control": "SA-4",
+          "sim": 0.425,
+          "verdict": "yes",
+          "evidence": "Third-party vendors that handle company data must meet our security requirements",
+          "reason": "The policy statement explicitly mentions that third-party vendors handling company data must meet the company's security requirements, which aligns with the main purpose of Control SA-4, which is to include security requirements in the acquisition contract.",
+          "flag": ""
+        }
+      ]
+    },
+    "P22": {
+      "cands": [
+        [
+          "RA-9",
+          0.5225233435630798
+        ],
+        [
+          "RA-3",
+          0.4937218427658081
+        ],
+        [
+          "SA-20",
+          0.4403223395347595
+        ],
+        [
+          "RA-1",
+          0.43982014060020447
+        ],
+        [
+          "SI-13",
+          0.42408639192581177
+        ],
+        [
+          "SR-2",
+          0.3997027277946472
+        ],
+        [
+          "PM-28",
+          0.38737040758132935
+        ],
+        [
+          "SA-3",
+          0.3851420283317566
+        ],
+        [
+          "RA-5",
+          0.3737552762031555
+        ],
+        [
+          "SR-1",
+          0.365520179271698
+        ]
+      ],
+      "judged": [
+        {
+          "control": "RA-9",
+          "sim": 0.523,
+          "verdict": "yes",
+          "evidence": "A risk assessment of critical systems is carried out at least once a year.",
+          "reason": "The policy statement explicitly mentions carrying out a risk assessment, which aligns with the main purpose of the control, which is to identify critical system components and functions through a criticality analysis.",
+          "flag": ""
+        },
+        {
+          "control": "RA-3",
+          "sim": 0.494,
+          "verdict": "yes",
+          "evidence": "A risk assessment of critical systems is carried out at least once a year.",
+          "reason": "The policy statement addresses the main purpose of the control, which is to conduct a risk assessment.",
+          "flag": ""
+        },
+        {
+          "control": "SA-20",
+          "sim": 0.44,
+          "verdict": "yes",
+          "evidence": "A risk assessment of critical systems is carried out at least once a year.",
+          "reason": "This policy statement addresses the periodic review of critical systems, which is the main purpose of SA-20, Customized Development of Critical Components.",
+          "flag": ""
+        },
+        {
+          "control": "RA-1",
+          "sim": 0.44,
+          "verdict": "no",
+          "evidence": "Addressing purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance",
+          "reason": "The policy statement does not mention the implementation or designating an official to manage the development of the risk assessment policy, which is the main purpose of control RA-1.",
+          "flag": ""
+        },
+        {
+          "control": "SI-13",
+          "sim": 0.424,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the specific requirement to determine mean time to failure (MTTF) or provide substitute system components as outlined in control SI-13.",
+          "flag": ""
+        },
+        {
+          "control": "SR-2",
+          "sim": 0.4,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about annual risk assessment of critical systems, while the control SR-2 is about supply chain risk management plan development and maintenance, which are two different topics.",
+          "flag": ""
+        },
+        {
+          "control": "PM-28",
+          "sim": 0.387,
+          "verdict": "no",
+          "evidence": "A risk assessment of critical systems is carried out at least once a year.",
+          "reason": "The policy statement only mentions the frequency of risk assessments, but does not address the identification of assumptions, priorities, or organizational risk tolerance, which are key aspects of the PM-28 control.",
+          "flag": ""
+        },
+        {
+          "control": "SA-3",
+          "sim": 0.385,
+          "verdict": "no",
+          "evidence": "A risk assessment of critical systems is carried out at least once a year.",
+          "reason": "The policy statement does not address the development life cycle or the integration of risk management into the process, which are key components of control SA-3.",
+          "flag": ""
+        }
+      ]
+    },
+    "P23": {
+      "cands": [
+        [
+          "PS-4",
+          0.5821439027786255
+        ],
+        [
+          "AC-1",
+          0.38253679871559143
+        ],
+        [
+          "PS-6",
+          0.38153374195098877
+        ],
+        [
+          "SC-10",
+          0.37835773825645447
+        ],
+        [
+          "PS-5",
+          0.364315390586853
+        ],
+        [
+          "AC-12",
+          0.3621804714202881
+        ],
+        [
+          "PE-2",
+          0.3554835915565491
+        ],
+        [
+          "MA-7",
+          0.3488648533821106
+        ],
+        [
+          "AC-3",
+          0.34550416469573975
+        ],
+        [
+          "AC-8",
+          0.34428465366363525
+        ]
+      ],
+      "judged": [
+        {
+          "control": "PS-4",
+          "sim": 0.582,
+          "verdict": "yes",
+          "evidence": "When employment ends, all system access is removed on the last working day.",
+          "reason": "The policy statement addresses the main purpose of disabling system access after employment termination, which is covered in the control PS-4-2, 'Disable system access within [time period]'.",
+          "flag": ""
+        },
+        {
+          "control": "AC-1",
+          "sim": 0.383,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about the termination of employment, while the control AC-1 is about the development and dissemination of access control policy, which is a broader topic.",
+          "flag": ""
+        },
+        {
+          "control": "PS-6",
+          "sim": 0.382,
+          "verdict": "partial",
+          "evidence": "Sign appropriate access agreements prior to being granted access",
+          "reason": "The policy statement mentions removing system access upon employment end, but it does not explicitly mention the re-signing of access agreements as part of the process, only that access agreements must be updated periodically.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "SC-10",
+          "sim": 0.378,
+          "verdict": "no",
+          "evidence": "When employment ends",
+          "reason": "The policy statement focuses on employment ending, whereas the control SC-10 is about network disconnection after a period of inactivity or at the end of a session, regardless of employment status.",
+          "flag": ""
+        },
+        {
+          "control": "PS-5",
+          "sim": 0.364,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on removing system access at the end of employment, whereas the control PS-5 is concerned with reviewing and modifying access authorizations for personnel transfers.",
+          "flag": ""
+        },
+        {
+          "control": "AC-12",
+          "sim": 0.362,
+          "verdict": "partial",
+          "evidence": "When employment ends",
+          "reason": "The policy statement covers the termination of employment, which can be a trigger event for session termination, but it does not explicitly state the automatic termination of sessions.",
+          "flag": ""
+        },
+        {
+          "control": "PE-2",
+          "sim": 0.355,
+          "verdict": "no",
+          "evidence": "When employment ends",
+          "reason": "The control PE-2 is about physical access authorizations, while the policy statement is about system access removal after employment ends, which is a different topic.",
+          "flag": ""
+        },
+        {
+          "control": "MA-7",
+          "sim": 0.349,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about ending system access, while the control MA-7 is about field maintenance of systems.",
+          "flag": ""
+        }
+      ]
+    },
+    "P24": {
+      "cands": [
+        [
+          "SI-3",
+          0.41307759284973145
+        ],
+        [
+          "SC-35",
+          0.4115831255912781
+        ],
+        [
+          "SI-7",
+          0.3646889626979828
+        ],
+        [
+          "SC-34",
+          0.32187145948410034
+        ],
+        [
+          "SC-50",
+          0.3207540810108185
+        ],
+        [
+          "SR-9",
+          0.30804499983787537
+        ],
+        [
+          "SI-16",
+          0.3005909323692322
+        ],
+        [
+          "SI-8",
+          0.2989403009414673
+        ],
+        [
+          "MA-3",
+          0.29854708909988403
+        ],
+        [
+          "SC-4",
+          0.2965708076953888
+        ]
+      ],
+      "judged": [
+        {
+          "control": "SI-3",
+          "sim": 0.413,
+          "verdict": "partial",
+          "evidence": "Automatically update malicious code protection mechanisms as new releases are available in accordance with organizational configuration management policy and procedures;",
+          "reason": "This policy statement covers the automatic update of malicious code protection mechanisms, which is the main purpose of control SI-3, Malicious Code Protection.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "SC-35",
+          "sim": 0.412,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not mention the proactive identification of malicious websites or network-based malicious code.",
+          "flag": ""
+        },
+        {
+          "control": "SI-7",
+          "sim": 0.365,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement only addresses the installation and updating of anti-malware software, whereas the control focuses on integrity verification tools for detecting unauthorized changes to software, firmware, and information.",
+          "flag": ""
+        },
+        {
+          "control": "SC-34",
+          "sim": 0.322,
+          "verdict": "no",
+          "evidence": "\"load and execute: The operating environment from hardware-enforced, read-only media; and The following applications from hardware-enforced, read-only media: [applications].\" ",
+          "reason": "This policy statement does not address the security control of loading and executing non-modifiable executable programs from hardware-enforced, read-only media.",
+          "flag": ""
+        },
+        {
+          "control": "SC-50",
+          "sim": 0.321,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on endpoint security, while the control SC-50 deals with separation and policy enforcement mechanisms across multiple security domains, not endpoint protection.",
+          "flag": ""
+        },
+        {
+          "control": "SR-9",
+          "sim": 0.308,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "",
+          "flag": ""
+        },
+        {
+          "control": "SI-16",
+          "sim": 0.301,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the protection of system memory from unauthorized code execution, only the installation and updating of anti-malware software on endpoints.",
+          "flag": ""
+        },
+        {
+          "control": "SI-8",
+          "sim": 0.299,
+          "verdict": "yes",
+          "evidence": "Anti-malware software is installed on all endpoints",
+          "reason": "The policy statement directly mentions the installation of anti-malware software on endpoints, which is the main purpose of control SI-8 Spam Protection.",
+          "flag": ""
+        }
+      ]
+    },
+    "P25": {
+      "cands": [
+        [
+          "SC-7",
+          0.45714354515075684
+        ],
+        [
+          "AC-3",
+          0.4437640607357025
+        ],
+        [
+          "AC-17",
+          0.4387703835964203
+        ],
+        [
+          "AC-4",
+          0.43639296293258667
+        ],
+        [
+          "PE-4",
+          0.414328396320343
+        ],
+        [
+          "SC-46",
+          0.4038286805152893
+        ],
+        [
+          "CM-5",
+          0.4014683961868286
+        ],
+        [
+          "CA-9",
+          0.40064603090286255
+        ],
+        [
+          "SC-49",
+          0.3962947726249695
+        ],
+        [
+          "SC-50",
+          0.3926490247249603
+        ]
+      ],
+      "judged": [
+        {
+          "control": "SC-7",
+          "sim": 0.457,
+          "verdict": "yes",
+          "evidence": "only approved traffic is allowed",
+          "reason": "The policy statement addresses the main purpose of control SC-7, which is to implement boundary protection measures to control communications at the system's external managed interfaces and internal managed interfaces.",
+          "flag": ""
+        },
+        {
+          "control": "AC-3",
+          "sim": 0.444,
+          "verdict": "yes",
+          "evidence": "A firewall separates the internal network from the internet and only approved traffic is allowed.",
+          "reason": "The policy statement specifically mentions separating the internal network from the internet and controlling approved traffic, which aligns with the main purpose of enforcing approved authorizations for logical access to information and system resources.",
+          "flag": ""
+        },
+        {
+          "control": "AC-17",
+          "sim": 0.439,
+          "verdict": "no",
+          "evidence": "A firewall separates the internal network from the internet and only approved traffic is allowed.",
+          "reason": "The policy statement does not address the establishment and documentation of usage restrictions for remote access, nor does it mention the authorization of remote access connections.",
+          "flag": ""
+        },
+        {
+          "control": "AC-4",
+          "sim": 0.436,
+          "verdict": "no",
+          "evidence": "A firewall separates the internal network from the internet and only approved traffic is allowed.",
+          "reason": "The policy statement is focused on perimeter security measures, while the control AC-4 is related to information flow enforcement, which involves controlling the flow of information within and between systems, not just external traffic.",
+          "flag": ""
+        },
+        {
+          "control": "PE-4",
+          "sim": 0.414,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about network perimeter security, while PE-4 is about access control for transmission, which is a different topic.",
+          "flag": ""
+        },
+        {
+          "control": "SC-46",
+          "sim": 0.404,
+          "verdict": "partial",
+          "evidence": "only approved traffic is allowed",
+          "reason": "the policy statement mentions a firewall, which enforces traffic separation, but SC-46 focuses on policy enforcement for connecting security domains, which is not explicitly addressed by the policy statement.",
+          "flag": ""
+        },
+        {
+          "control": "CM-5",
+          "sim": 0.401,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on internet traffic control, while the control CM-5 is about access restrictions for system changes.",
+          "flag": ""
+        },
+        {
+          "control": "CA-9",
+          "sim": 0.401,
+          "verdict": "yes",
+          "evidence": "only approved traffic is allowed.",
+          "reason": "The policy statement requires approved traffic, which is a similar requirement to the control's main purpose of authorizing internal connections to the system.",
+          "flag": ""
+        }
+      ]
+    },
+    "P26": {
+      "cands": [
+        [
+          "CA-6",
+          0.3273836374282837
+        ],
+        [
+          "AC-14",
+          0.3244725465774536
+        ],
+        [
+          "PS-6",
+          0.2822553217411041
+        ],
+        [
+          "CM-5",
+          0.27672433853149414
+        ],
+        [
+          "PE-2",
+          0.27540743350982666
+        ],
+        [
+          "SC-15",
+          0.2749883532524109
+        ],
+        [
+          "AC-22",
+          0.2665449380874634
+        ],
+        [
+          "SA-4",
+          0.2624152898788452
+        ],
+        [
+          "AC-21",
+          0.2613174319267273
+        ],
+        [
+          "AC-1",
+          0.2600647211074829
+        ]
+      ],
+      "judged": [
+        {
+          "control": "CA-6",
+          "sim": 0.327,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about a person performing a single action (request and approve), whereas the control CA-6 is about authorization for a system's operation and inheritance of common controls.",
+          "flag": ""
+        },
+        {
+          "control": "AC-14",
+          "sim": 0.324,
+          "verdict": "no",
+          "evidence": "No single person can both request and approve a payment or a production code release.",
+          "reason": "The policy statement addresses a different topic, specifically access control to payments and production code releases, which is not the main purpose of AC-14.",
+          "flag": ""
+        },
+        {
+          "control": "PS-6",
+          "sim": 0.282,
+          "verdict": "yes",
+          "evidence": "No single person can both request and approve a payment or a production code release.",
+          "reason": "The policy statement aligns with the main purpose of PS-6, which is to ensure that access agreements are in place for individuals requiring access to organizational information and systems.",
+          "flag": ""
+        },
+        {
+          "control": "CM-5",
+          "sim": 0.277,
+          "verdict": "no",
+          "evidence": "No single person can both request and approve a payment or a production code release.",
+          "reason": "The control CM-5 is about change management access restrictions, while the policy statement deals with personnel roles in payment and production code release processes.",
+          "flag": ""
+        },
+        {
+          "control": "PE-2",
+          "sim": 0.275,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on payment and production code releases, while the control PE-2 deals with physical access authorizations.",
+          "flag": ""
+        },
+        {
+          "control": "SC-15",
+          "sim": 0.275,
+          "verdict": "no",
+          "evidence": " ''",
+          "reason": "The policy statement addresses access control and approval for payment and production code release, but the security control SC-15 deals with remote activation of collaborative computing devices and applications, which is a different security requirement.",
+          "flag": ""
+        },
+        {
+          "control": "AC-22",
+          "sim": 0.267,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement only addresses a specific action (requesting and approving a payment or production code release) which is not the main purpose of control AC-22, which is to ensure information is not publicly accessible.",
+          "flag": ""
+        },
+        {
+          "control": "SA-4",
+          "sim": 0.262,
+          "verdict": "no",
+          "evidence": "No single person can both request and approve a payment or a production code release.",
+          "reason": "The policy statement addresses access control and authorization for financial transactions and production code releases, which is a different security requirement than the control SA-4, which focuses on the acquisition process and security requirements.",
+          "flag": ""
+        }
+      ]
+    },
+    "P27": {
+      "cands": [
+        [
+          "AC-18",
+          0.5162298679351807
+        ],
+        [
+          "SC-40",
+          0.4196370840072632
+        ],
+        [
+          "AC-19",
+          0.362587571144104
+        ],
+        [
+          "MP-2",
+          0.35449689626693726
+        ],
+        [
+          "IA-3",
+          0.33969444036483765
+        ],
+        [
+          "AC-17",
+          0.3184727728366852
+        ],
+        [
+          "AC-21",
+          0.3007752001285553
+        ],
+        [
+          "PE-4",
+          0.29216575622558594
+        ],
+        [
+          "PE-2",
+          0.28914082050323486
+        ],
+        [
+          "PS-6",
+          0.2884146571159363
+        ]
+      ],
+      "judged": [
+        {
+          "control": "AC-18",
+          "sim": 0.516,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the authorization of wireless access types, only the encryption method and separation of guest Wi-Fi from the corporate network.",
+          "flag": ""
+        },
+        {
+          "control": "SC-40",
+          "sim": 0.42,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about securing Wi-Fi networks, while the control SC-40 is about protecting specific types of signal parameter attacks, which are not mentioned in the policy statement.",
+          "flag": ""
+        },
+        {
+          "control": "AC-19",
+          "sim": 0.363,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the connection requirements or implementation guidance for mobile devices outside of controlled areas.",
+          "flag": ""
+        },
+        {
+          "control": "MP-2",
+          "sim": 0.354,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address restricting access to media, but rather encryption and network separation.",
+          "flag": ""
+        },
+        {
+          "control": "IA-3",
+          "sim": 0.34,
+          "verdict": "yes",
+          "evidence": "Wireless networks use WPA3 or WPA2-Enterprise encryption, and guest Wi-Fi is kept separate from the corporate network.",
+          "reason": "The policy statement ensures authentication of wireless networks, which aligns with the main purpose of uniquely identifying and authenticating devices before establishing a network connection.",
+          "flag": ""
+        },
+        {
+          "control": "AC-17",
+          "sim": 0.318,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about wireless network configuration and guest Wi-Fi isolation, but it does not mention remote access or remote connections.",
+          "flag": ""
+        },
+        {
+          "control": "AC-21",
+          "sim": 0.301,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about wireless network encryption and guest network separation, which is unrelated to the control's focus on information sharing.",
+          "flag": ""
+        },
+        {
+          "control": "PE-4",
+          "sim": 0.292,
+          "verdict": "no",
+          "evidence": "Physical access",
+          "reason": "The policy statement does not address the control's main purpose, which is about wireless transmission access, but rather focuses on network segmentation.",
+          "flag": ""
+        }
+      ]
+    },
+    "P28": {
+      "cands": [
+        [
+          "SA-21",
+          0.4380451440811157
+        ],
+        [
+          "PM-13",
+          0.4365013837814331
+        ],
+        [
+          "PS-1",
+          0.4262692928314209
+        ],
+        [
+          "PS-9",
+          0.39248672127723694
+        ],
+        [
+          "AT-4",
+          0.3781372010707855
+        ],
+        [
+          "AC-1",
+          0.3725278973579407
+        ],
+        [
+          "PS-7",
+          0.3704703450202942
+        ],
+        [
+          "PT-1",
+          0.3622497618198395
+        ],
+        [
+          "AU-13",
+          0.3601241111755371
+        ],
+        [
+          "SI-6",
+          0.3551735281944275
+        ]
+      ],
+      "judged": [
+        {
+          "control": "SA-21",
+          "sim": 0.438,
+          "verdict": "partial",
+          "evidence": "Has appropriate access authorizations as determined by assigned official government duties",
+          "reason": "The policy statement addresses the main purpose of control SA-21, which is to ensure developers have appropriate access authorizations based on their official government duties.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "PM-13",
+          "sim": 0.437,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about assigning access to sensitive systems, while the control PM-13 is about workforce development and improvement program, which is a broader security requirement.",
+          "flag": ""
+        },
+        {
+          "control": "PS-1",
+          "sim": 0.426,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about personnel security policy in general, while the control PS-1 is about developing and disseminating personnel security policy, including procedures and designating an official to manage it, which is a more specific requirement.",
+          "flag": ""
+        },
+        {
+          "control": "PS-9",
+          "sim": 0.392,
+          "verdict": "no",
+          "evidence": "Incorporate security and privacy roles and responsibilities into organizational position descriptions.",
+          "reason": "The policy statement focuses on access control through background-checking, whereas the control PS-9 is concerned with role and responsibilities in position descriptions.",
+          "flag": ""
+        },
+        {
+          "control": "AT-4",
+          "sim": 0.378,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about access control and personnel screening, whereas the AT-4 control is about documentation and retention of training records, which is a separate security requirement.",
+          "flag": ""
+        },
+        {
+          "control": "AC-1",
+          "sim": 0.373,
+          "verdict": "partial",
+          "evidence": "Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance;",
+          "reason": "The policy statement requires background-checking before access to sensitive systems, which aligns with the control's purpose of addressing roles and responsibilities in access control policy.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "PS-7",
+          "sim": 0.37,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement only addresses background checks for new hires, while the control PS-7 focuses on security requirements for external providers, including notification and compliance monitoring, which are not mentioned in the policy statement.",
+          "flag": ""
+        },
+        {
+          "control": "PT-1",
+          "sim": 0.362,
+          "verdict": "no",
+          "evidence": "Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance;",
+          "reason": "The policy statement is about the personal identifiable information processing and transparency policy, but the control PT-1 is about policy and procedures for the organization in general, not specifically about personally identifiable information processing.",
+          "flag": ""
+        }
+      ]
+    },
+    "N01": {
+      "cands": [
+        [
+          "PM-31",
+          0.2864966094493866
+        ],
+        [
+          "AC-16",
+          0.2863466143608093
+        ],
+        [
+          "PM-15",
+          0.2727889120578766
+        ],
+        [
+          "SC-16",
+          0.24958348274230957
+        ],
+        [
+          "CA-7",
+          0.23805278539657593
+        ],
+        [
+          "PM-20",
+          0.23258967697620392
+        ],
+        [
+          "PM-27",
+          0.22128282487392426
+        ],
+        [
+          "CA-1",
+          0.21895882487297058
+        ],
+        [
+          "PM-13",
+          0.21862179040908813
+        ],
+        [
+          "IA-13",
+          0.21812781691551208
+        ]
+      ],
+      "judged": [
+        {
+          "control": "PM-31",
+          "sim": 0.286,
+          "verdict": "partial",
+          "evidence": "Ongoing monitoring of organizationally-defined metrics in accordance with the continuous monitoring strategy;",
+          "reason": "The policy statement mentions ongoing monitoring, which is the main purpose of the control PM-31 Continuous Monitoring Strategy.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "AC-16",
+          "sim": 0.286,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about customer relationships and does not address security and privacy attributes or their association with information.",
+          "flag": ""
+        },
+        {
+          "control": "PM-15",
+          "sim": 0.273,
+          "verdict": "partial",
+          "evidence": "To maintain currency with recommended security and privacy practices, techniques, and technologies;",
+          "reason": "The policy statement mentions maintaining currency with recommended security and privacy practices, which aligns with the main purpose of the control PM-15.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "SC-16",
+          "sim": 0.25,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement discusses customer relationships, not the transmission of security and privacy attributes.",
+          "flag": ""
+        },
+        {
+          "control": "CA-7",
+          "sim": 0.238,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement focuses on customer relationships, while the control CA-7 focuses on continuous monitoring, a security process related to monitoring and assessing control effectiveness.",
+          "flag": ""
+        },
+        {
+          "control": "PM-20",
+          "sim": 0.233,
+          "verdict": "no",
+          "evidence": " Ensures that the public has access to information about organizational privacy activities and can communicate with its senior agency official for privacy;",
+          "reason": "The policy statement is about customer relationships, not privacy program information.",
+          "flag": ""
+        },
+        {
+          "control": "PM-27",
+          "sim": 0.221,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "This policy statement focuses on customer relationships, not privacy program compliance or accountability, which is the main purpose of PM-27 Privacy Reporting.",
+          "flag": ""
+        },
+        {
+          "control": "CA-1",
+          "sim": 0.219,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about customer relationships, whereas the control CA-1 is about developing and disseminating a policy on assessment, authorization, and monitoring. They address different topics.",
+          "flag": ""
+        }
+      ]
+    },
+    "N02": {
+      "cands": [
+        [
+          "PM-20",
+          0.21900740265846252
+        ],
+        [
+          "AU-1",
+          0.19652923941612244
+        ],
+        [
+          "PL-4",
+          0.17670279741287231
+        ],
+        [
+          "AC-1",
+          0.1747351586818695
+        ],
+        [
+          "PL-1",
+          0.1732105016708374
+        ],
+        [
+          "PE-8",
+          0.1657239943742752
+        ],
+        [
+          "PT-1",
+          0.16290296614170074
+        ],
+        [
+          "PS-6",
+          0.1598310023546219
+        ],
+        [
+          "PM-27",
+          0.15116728842258453
+        ],
+        [
+          "CP-1",
+          0.14654047787189484
+        ]
+      ],
+      "judged": [
+        {
+          "control": "PM-20",
+          "sim": 0.219,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about an office holiday calendar, while the control PM-20 is about the dissemination of privacy program information, two unrelated topics.",
+          "flag": ""
+        },
+        {
+          "control": "AU-1",
+          "sim": 0.197,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The control AU-1 is about establishing audit and accountability policies and procedures, while the policy statement is about publishing an office holiday calendar, an unrelated topic",
+          "flag": ""
+        },
+        {
+          "control": "PL-4",
+          "sim": 0.177,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about the office holiday calendar, which is unrelated to the system access and security rules described in the control PL-4 - Rules of Behavior.",
+          "flag": ""
+        },
+        {
+          "control": "AC-1",
+          "sim": 0.175,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The control AC-1 focuses on developing and disseminating an access control policy, while the policy statement is about publishing an office holiday calendar, which is unrelated to access control.",
+          "flag": ""
+        },
+        {
+          "control": "PL-1",
+          "sim": 0.173,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement does not address the development of planning policy or management commitment, which are key components of the PL-1 control.",
+          "flag": ""
+        },
+        {
+          "control": "PE-8",
+          "sim": 0.166,
+          "verdict": "partial",
+          "evidence": "The office holiday calendar is published every January.",
+          "reason": "The control PE-8 focuses on visitor access records, but the policy statement addresses the publication of the office holiday calendar, which is a separate topic and does not directly relate to visitor access records.",
+          "flag": ""
+        },
+        {
+          "control": "PT-1",
+          "sim": 0.163,
+          "verdict": "no",
+          "evidence": "",
+          "reason": "The policy statement is about publishing the office holiday calendar, not about personally identifiable information processing and transparency policy.",
+          "flag": ""
+        },
+        {
+          "control": "PS-6",
+          "sim": 0.16,
+          "verdict": "no",
+          "evidence": "The office holiday calendar is published every January.",
+          "reason": "The control PS-6 - Access Agreements is about access agreements to organizational systems, while the policy statement is about publishing the office holiday calendar, which is unrelated to access agreements.",
+          "flag": ""
+        }
+      ]
+    },
+    "N03": {
+      "cands": [
+        [
+          "SC-23",
+          0.4538950026035309
+        ],
+        [
+          "PS-9",
+          0.4368087649345398
+        ],
+        [
+          "SC-8",
+          0.4361584782600403
+        ],
+        [
+          "PM-20",
+          0.4277799725532532
+        ],
+        [
+          "SI-18",
+          0.4271160662174225
+        ],
+        [
+          "RA-7",
+          0.4186832904815674
+        ],
+        [
+          "PL-8",
+          0.4110471308231354
+        ],
+        [
+          "PM-4",
+          0.4070553779602051
+        ],
+        [
+          "SC-28",
+          0.4044873118400574
+        ],
+        [
+          "PE-19",
+          0.3929261267185211
+        ]
+      ],
+      "judged": [
+        {
+          "control": "SC-23",
+          "sim": 0.454,
+          "verdict": "yes",
+          "evidence": "We take the security of customer information very seriously.",
+          "reason": "The policy statement prioritizes the security of customer information, which is closely related to protecting the authenticity of communications sessions as required by SC-23.",
+          "flag": ""
+        },
+        {
+          "control": "PS-9",
+          "sim": 0.437,
+          "verdict": "yes",
+          "evidence": "We take the security of customer information very seriously.",
+          "reason": "This policy statement emphasizes the organization's responsibility to protect customer information, which aligns with the main purpose of incorporating security and privacy roles and responsibilities into position descriptions.",
+          "flag": ""
+        },
+        {
+          "control": "SC-8",
+          "sim": 0.436,
+          "verdict": "partial",
+          "evidence": "We take the security of customer information very seriously.",
+          "reason": "The policy statement addresses the importance of customer information security, but the control specifically focuses on protecting confidentiality and integrity of transmitted information, not just customer information.",
+          "flag": ""
+        },
+        {
+          "control": "PM-20",
+          "sim": 0.428,
+          "verdict": "yes",
+          "evidence": "We take the security of customer information very seriously.",
+          "reason": "The policy statement addresses the main purpose of the control, which is to demonstrate the organization's commitment to transparency and public access to information about its privacy practices.",
+          "flag": ""
+        },
+        {
+          "control": "SI-18",
+          "sim": 0.427,
+          "verdict": "partial",
+          "evidence": "across the information life cycle",
+          "reason": "the policy statement ensures the accuracy and completeness of personally identifiable information, addressing the control's requirement for timeliness and relevance.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "RA-7",
+          "sim": 0.419,
+          "verdict": "yes",
+          "evidence": "We take the security of customer information very seriously.",
+          "reason": "The policy statement prioritizes customer information security, aligning with the main purpose of responding to security assessments and audits.",
+          "flag": ""
+        },
+        {
+          "control": "PL-8",
+          "sim": 0.411,
+          "verdict": "partial",
+          "evidence": "Develop security and privacy architectures for the system that: Describe the requirements and approach to be taken for protecting the confidentiality, integrity, and availability of organizational information;",
+          "reason": "The policy statement addresses the main purpose of PL-8, which is to develop security and privacy architectures to protect organizational information.",
+          "flag": "evidence_not_in_statement"
+        },
+        {
+          "control": "PM-4",
+          "sim": 0.407,
+          "verdict": "partial",
+          "evidence": "Are developed and maintained;",
+          "reason": "The policy statement mentions ensuring plans are 'developed and maintained', which aligns with the main purpose of implementing a Plan of Action and Milestones Process.",
+          "flag": "evidence_not_in_statement"
+        }
+      ]
+    }
+  }
+}

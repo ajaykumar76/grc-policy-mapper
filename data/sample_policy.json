@@ -1,0 +1,40 @@
+{
+  "_note": "Fictional company 'Acme Analytics'. Statements and gold labels were written by the project author. Gold lists contain controls a reviewer would accept; they are not exhaustive, so precision is understated.",
+  "statements": [
+    {"id": "P01", "text": "All users must authenticate with a unique user ID and a password of at least 14 characters.", "gold": ["IA-2", "IA-5"]},
+    {"id": "P02", "text": "Multi-factor authentication is required for all remote access and for all administrator accounts.", "gold": ["IA-2", "AC-17"]},
+    {"id": "P03", "text": "Accounts are locked for 30 minutes after five consecutive failed login attempts.", "gold": ["AC-7"]},
+    {"id": "P04", "text": "User access rights are reviewed every quarter by the system owner, and accounts unused for 60 days are disabled.", "gold": ["AC-2"]},
+    {"id": "P05", "text": "Employees receive only the access they need to perform their job duties.", "gold": ["AC-6"]},
+    {"id": "P06", "text": "User sessions are automatically locked after 10 minutes of inactivity.", "gold": ["AC-11"]},
+    {"id": "P07", "text": "Security-relevant events such as logins, privilege changes and failed access attempts are logged on all servers.", "gold": ["AU-2", "AU-12"]},
+    {"id": "P08", "text": "Logs are reviewed weekly for suspicious activity and retained for at least 12 months.", "gold": ["AU-6", "AU-11"]},
+    {"id": "P09", "text": "Security incidents must be reported to the security team within 24 hours of discovery.", "gold": ["IR-6"]},
+    {"id": "P10", "text": "The company maintains an incident response plan that is tested every year.", "gold": ["IR-8", "IR-3"]},
+    {"id": "P11", "text": "Critical systems are backed up daily and backup restores are tested every quarter.", "gold": ["CP-9", "CP-4"]},
+    {"id": "P12", "text": "Security patches rated critical are installed within 14 days of release.", "gold": ["SI-2"]},
+    {"id": "P13", "text": "Vulnerability scans of all internet-facing systems run monthly and findings are tracked until they are fixed.", "gold": ["RA-5"]},
+    {"id": "P14", "text": "Sensitive data stored on laptops and servers must be encrypted.", "gold": ["SC-28"]},
+    {"id": "P15", "text": "All data sent over public networks must be protected with TLS 1.2 or higher.", "gold": ["SC-8"]},
+    {"id": "P16", "text": "All employees complete security awareness training when hired and every year after that.", "gold": ["AT-2"]},
+    {"id": "P17", "text": "Changes to production systems need documented approval before they are made.", "gold": ["CM-3"]},
+    {"id": "P18", "text": "Servers and workstations are built from approved hardened configuration baselines.", "gold": ["CM-2", "CM-6"]},
+    {"id": "P19", "text": "Storage media containing company data is securely wiped or destroyed before disposal.", "gold": ["MP-6"]},
+    {"id": "P20", "text": "Visitors must sign in and be escorted in areas where servers are located.", "gold": ["PE-3", "PE-8"]},
+    {"id": "P21", "text": "Third-party vendors that handle company data must meet our security requirements and are reviewed every year.", "gold": ["SA-9", "SR-6"]},
+    {"id": "P22", "text": "A risk assessment of critical systems is carried out at least once a year.", "gold": ["RA-3"]},
+    {"id": "P23", "text": "When employment ends, all system access is removed on the last working day.", "gold": ["PS-4"]},
+    {"id": "P24", "text": "Anti-malware software is installed on all endpoints and kept up to date.", "gold": ["SI-3"]},
+    {"id": "P25", "text": "A firewall separates the internal network from the internet and only approved traffic is allowed.", "gold": ["SC-7"]},
+    {"id": "P26", "text": "No single person can both request and approve a payment or a production code release.", "gold": ["AC-5"]},
+    {"id": "P27", "text": "Wireless networks use WPA3 or WPA2-Enterprise encryption, and guest Wi-Fi is kept separate from the corporate network.", "gold": ["AC-18"]},
+    {"id": "P28", "text": "New hires are background-checked before they are given access to sensitive systems.", "gold": ["PS-3"]},
+    {"id": "N01", "text": "Acme Analytics was founded in 2015 and is proud of its customer relationships.", "gold": []},
+    {"id": "N02", "text": "The office holiday calendar is published every January.", "gold": []},
+    {"id": "N03", "text": "We take the security of customer information very seriously.", "gold": []}
+  ],
+  "scope": {
+    "_note": "Illustrative 'must cover' control set for the gap report. Chosen by the author, not an official NIST baseline.",
+    "controls": ["AC-2", "AC-3", "AC-5", "AC-6", "AC-7", "AC-11", "AC-17", "AC-18", "AT-2", "AU-2", "AU-6", "AU-9", "AU-11", "AU-12", "CM-2", "CM-3", "CM-6", "CM-8", "CP-2", "CP-4", "CP-9", "IA-2", "IA-5", "IR-3", "IR-4", "IR-6", "IR-8", "MP-6", "PE-3", "PS-3", "PS-4", "RA-3", "RA-5", "SA-9", "SC-7", "SC-8", "SC-12", "SC-28", "SI-2", "SI-3", "SI-4", "SR-6"]
+  }
+}
